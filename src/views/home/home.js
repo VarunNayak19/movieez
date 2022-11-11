@@ -4,9 +4,10 @@ import { fetchAsyncMovies, fetchAsyncShows } from "../../features/movies/movieSl
 import { useDispatch } from "react-redux";
 const Home = () => {
   const dispatch = useDispatch();
-
-  const movieText = localStorage.getItem("lastsearch") || "harry";
-  const showText = localStorage.getItem("lastsearch") || "friends";
+  const term = localStorage.getItem("lastsearch");
+  console.log("term", term)
+  const movieText = "harry"
+  const showText = "friends"
   useEffect(() => {
     dispatch(fetchAsyncMovies(movieText));
     dispatch(fetchAsyncShows(showText));
