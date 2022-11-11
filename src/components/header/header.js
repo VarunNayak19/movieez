@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
+import { useDispatch } from "react-redux";
 import "./header.css"
+import { fetchAsyncMovies, fetchAsyncShows } from "../../features/movies/movieSlice";
 const Header = () => {
+  const dispatch = useDispatch();
   const [term, setterm] = useState("")
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(fetchAsyncMovies(term));
+    dispatch(fetchAsyncShows(term));
+    setterm("")
+    localStorage.setItem("lastsearch", term)
 
   }
   return <div className="header">
@@ -11,7 +19,7 @@ const Header = () => {
       <div className="logo">
         <span>
           Movieeez
-</span>
+        </span>
         <img src={require("../../assets/movielogo.png")} alt="icn" />
       </div>
     </Link>
