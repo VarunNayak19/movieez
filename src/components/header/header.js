@@ -14,23 +14,29 @@ const Header = () => {
     localStorage.setItem("lastsearch", term)
 
   }
-  return <div className="header">
-    <Link to="/" className="removeLinkdecoration">
-      <div className="logo">
-        <span>
-          Movieeez
-        </span>
-        <img src={require("../../assets/movielogo.png")} alt="icn" />
+  return (<div className="header">
+    <div className="headerContainer">
+      <Link to="/" className="removeLinkdecoration">
+        <div className="logo">
+          <span>
+            Movieeez
+          </span>
+          <img src={require("../../assets/movielogo.png")} alt="icn" />
+        </div>
+      </Link>
+      <form className="searchBarDiv web" onSubmit={submitHandler}>
+        <input type="text" className="searchBar" placeholder="Search..." value={term} onChange={(e) => setterm(e.target.value)} />
+        <button className="positioning" type="submit"><i class="fa-solid fa-magnifying-glass glass"></i></button>
+      </form>
+      <div className="userImage">
+        <img src={require("../../assets/userLogo.png")} alt="icn" />
       </div>
-    </Link>
-    <form className="searchBarDiv" onSubmit={submitHandler}>
+    </div>
+    <form className="searchBarDiv mobile" onSubmit={submitHandler}>
       <input type="text" className="searchBar" placeholder="Search..." value={term} onChange={(e) => setterm(e.target.value)} />
       <button className="positioning" type="submit"><i class="fa-solid fa-magnifying-glass glass"></i></button>
     </form>
-    <div className="userImage">
-      <img src={require("../../assets/userLogo.png")} alt="icn" />
-    </div>
-  </div>;
+  </div>);
 };
 
 export default Header;

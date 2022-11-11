@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 const Home = () => {
   const dispatch = useDispatch();
 
-  const movieText = localStorage.getItem("lastsearch");
-  const showText = localStorage.getItem("lastsearch");
+  const movieText = localStorage.getItem("lastsearch") || "harry";
+  const showText = localStorage.getItem("lastsearch") || "friends";
   useEffect(() => {
     dispatch(fetchAsyncMovies(movieText));
     dispatch(fetchAsyncShows(showText));
