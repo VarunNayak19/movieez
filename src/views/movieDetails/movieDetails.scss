@@ -1,0 +1,39 @@
+.movieSection{
+    display: flex;
+    justify-content: space-between;
+    gap:30px
+}
+.flexingtwodets{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    column-gap: 50px;
+    row-gap: 10px;
+    width: 100%;
+}
+.sectionLeft{
+    width:60%;
+}
+.sectionLeft h1{
+    font-size: 300%;
+}
+.sectionLeft h3{
+    margin-bottom: 10px;
+}
+.sectionLeft,.sectionRight{
+    margin-top: 20px;
+}
+.movieInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.movieRating{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.bolding{
+    font-weight: bolder;
+}
